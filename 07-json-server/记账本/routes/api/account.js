@@ -83,14 +83,14 @@ router.get('/account/:id', (req, res) => {
         .then(data => {
             res.json({
                 code: '0000',
-                msg: '删除成功',
+                msg: '读取成功',
                 data: data
             })
         })
         .catch(err => {
             res.json({
                 code: '1001',
-                msg: '删除失败',
+                msg: '读取失败',
                 data: null
             })
         })

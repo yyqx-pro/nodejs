@@ -26,10 +26,6 @@ mongoose.connection.once('open',()=>{
     .catch(err=>{
         console.log(err)
     })
-    //4.删除
-
-    //5.更新
-
 })
 
 mongoose.connection.on('error',()=>{

@@ -48,7 +48,6 @@ mongoose.connection.once('open', () => {
         .catch((err) => {
             console.log(err)
         })
-
 })
 
 mongoose.connection.on('error', () => {

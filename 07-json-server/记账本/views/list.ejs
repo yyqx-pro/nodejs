@@ -6,10 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-      <link
-      href="/css/bootstrap.css"
-      rel="stylesheet"
-    />
+  <link href="/css/bootstrap.css" rel="stylesheet" />
   <style>
     label {
       font-weight: normal;
@@ -29,6 +26,14 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-lg-8 col-lg-offset-2">
+        <div class="row">
+          <div class="col-xs-12" style="padding-top: 20px;">
+            <form action="/logout" method="post">
+              <button class="btn btn-danger">退出</button>
+            </form>
+          </div>
+        </div>
+        <hr>
         <div class="row">
           <h2 class="col-xs-6">记账本</h2>
           <h2 class="col-xs-6 text-right"><a href="/account/create" class="btn btn-primary">添加账单</a></h2>

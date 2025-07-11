@@ -3,10 +3,11 @@ var router = express.Router();
 //导入 moment
 const moment = require('moment');
 const AccountModel = require('../../models/AccountModel');
+const checkTokenMiddleware = require('../../middlewares/checkTokenMiddleware')
 
 
 //记账本的列表
-router.get('/account', function (req, res, next) {
+router.get('/account', checkTokenMiddleware, function (req, res, next) {
     //获取所有的账单信息
     // let accounts = db.get('accounts').value();
     //读取集合信息
@@ -29,7 +30,7 @@ router.get('/account', function (req, res, next) {
 
 
 //新增记录
-router.post('/account', (req, res) => {
+router.post('/account',checkTokenMiddleware, (req, res) => {
     //插入数据库
     AccountModel.create({
         ...req.body,
@@ -53,7 +54,7 @@ router.post('/account', (req, res) => {
 });
 
 //删除记录
-router.delete('/account/:id', (req, res) => {
+router.delete('/account/:id',checkTokenMiddleware, (req, res) => {
     //获取 params 的 id 参数
     let id = req.params.id;
     // //删除
@@ -75,7 +76,7 @@ router.delete('/account/:id', (req, res) => {
 });
 
 //获取单个账单信息
-router.get('/account/:id', (req, res) => {
+router.get('/account/:id',checkTokenMiddleware, (req, res) => {
     //获取 params 的 id 参数
     let id = req.params.id;
     // //删除
@@ -97,7 +98,7 @@ router.get('/account/:id', (req, res) => {
 });
 
 //更新账单
-router.patch('/account/:id', (req, res) => {
+router.patch('/account/:id',checkTokenMiddleware, (req, res) => {
     let id = req.params.id
 
     AccountModel.updateOne({ _id: id }, req.body)
